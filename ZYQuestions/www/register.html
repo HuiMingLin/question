@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="author" content="zm"/>
+		<title>注册-智游问答</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="all.css"/>
+	</head>
+	<body>
+		<!--导航条-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-title">
+						<span id="goBack" class="glyphicon glyphicon-chevron-left pull-left"></span>
+						注册
+						<span id="home" class="glyphicon glyphicon-home pull-right"></span>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<!--注册表单-->
+		<div class="container">
+			<form action="/user/register" method="post">
+				<!--爱称-->
+				<div class="form-group">
+					<input type="text" class="form-control" name="petName" required="required" pattern="^[a-zA-Z0-9\u4e00-\u9fa5]{2,16}$" placeholder="请输入爱称"/>
+				</div>
+				<!--密码-->
+				<div class="form-group">
+					<input type="password" class="form-control" name="password" required="required" pattern="^.{6,16}" placeholder="请输入密码"/>
+				</div>
+				<!--确认密码-->
+				<div class="form-group">
+					<input type="password" class="form-control" required="required" pattern="^.{6,16}" placeholder="请再次填写密码"/>
+				</div>
+				<!--性别-->
+				<div class="checkbox">
+					<label for="male">
+						<input type="radio" name="isMale" value="true" id="male" checked="checked" />
+						基佬
+					</label>
+					<label for="female">
+						<input type="radio" name="isMale" value="false" id="female" />
+						百合
+					</label>
+				</div>
+				<!--邮箱-->
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" required="required" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" placeholder="请输入邮箱"/>
+				</div>
+				<!--所学课程-->
+				<div class="form-group">
+					<select name="course" class="form-control">
+						<option value="HT	ML5" selected="selected">HTML5</option>
+						<option value="IOS" selected="selected">IOS</option>
+						<option value="Android" selected="selected">Android</option>
+					</select>
+				</div>
+				<!--提交按钮-->
+				<input type="submit" class="btn btn-success form-control" value="提交"/>
+			</form>
+		</div>
+		
+		<!--模态框(modal)-->
+		<div class="modal fade" role="dialog" id="myModal">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">智游教育</h4>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="jquery/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="scripts/register.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>
